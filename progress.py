@@ -29,6 +29,11 @@ def percent():
     return str(round(((now_ts - start_end_ts[0])/(start_end_ts[1] - start_end_ts[0]) * 100), 5))
 
 
+@bottle.route('/get/days/left')
+def days_left():
+    pass
+
+
 @bottle.route('/')
 def index():
     return bottle.template('index', test='testtesttest')
