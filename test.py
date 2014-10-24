@@ -2,6 +2,7 @@
 
 
 import datetime
+import time
 
 
 # Weeks
@@ -16,11 +17,16 @@ import datetime
 # print 'Months: {0}\nWeeks: {1}\nDays: {2}\nHours: {3}\nMinutes: {4}\nSeconds: {5}\n'.format(time_full_months, TIME_FULL_WEEKS, time_full_days, time_full_hours, time_full_minutes, time_full_seconds)
 
 DT_0 = datetime.datetime(2014, 9, 22, 12)
+dt_0_ts = time.mktime(DT_0.timetuple())
+
 #now_str = datetime.datetime.now().strftime('%Y-%m-%d')
 now = datetime.datetime.now()
 now = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute, now.second)
-full_term = DT_0 + datetime.timedelta(weeks=40)
+now_ts = time.mktime(now.timetuple())
 
-print type(DT_0), DT_0
-print type(now), now
-print type(full_term), full_term
+full_term = DT_0 + datetime.timedelta(weeks=40)
+full_term_ts = time.mktime(full_term.timetuple())
+
+print dt_0_ts, DT_0
+print now_ts, now
+print full_term_ts, full_term
